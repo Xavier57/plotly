@@ -1,0 +1,25 @@
+---
+title: 'Number of national implementation measures by country and by year'
+author: "Xavier Chapelant"
+date: "11 April 2019"
+always_allow_html: yes
+---
+
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+library(plotly)
+library(dplyr)
+mydata <- read.csv("C:/R/Developing_Data_Products-master/week3-xc/sparql.csv") 
+mydata2<-filter(mydata, year >1900)
+
+plot_ly(mydata2, x = ~year, y = ~countMNI, type = "scatter", 
+color = ~factor(country), mode = "lines")
+```
+
+
+## More Resources
+
+- [The Plolty Website](https://plot.ly/)
+- [The Plotly R API](https://plot.ly/r/)
+- [The Plotly R Package on GitHub](https://github.com/ropensci/plotly)
+- [The Plotly R Cheatsheet](https://images.plot.ly/plotly-documentation/images/r_cheat_sheet.pdf)
+- ["Plotly for R" book by Carson Sievert](https://cpsievert.github.io/plotly_book/)
